@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Taco_Protocol" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HM8-XS-0Q0" customClass="HeaderView" customModule="Taco_Protocol" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Taco-POP" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-wL-UTk">
+                                        <rect key="frame" x="54" y="14" width="267" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="267" id="fT2-Mm-EdY"/>
+                                            <constraint firstAttribute="height" constant="52" id="qe5-EK-Bj7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.2684056366" blue="0.190304525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1tW-q6-QwD"/>
+                                    <constraint firstItem="AcM-wL-UTk" firstAttribute="centerX" secondItem="HM8-XS-0Q0" secondAttribute="centerX" id="5Bi-LB-Zrg"/>
+                                    <constraint firstItem="AcM-wL-UTk" firstAttribute="centerY" secondItem="HM8-XS-0Q0" secondAttribute="centerY" id="AMb-1Y-QMa"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e4c-eX-IBU">
+                                <rect key="frame" x="16" y="100" width="343" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hyv-Me-oGw">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HM8-XS-0Q0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bw4-iS-uQG"/>
+                            <constraint firstItem="e4c-eX-IBU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ha6-eW-Y16"/>
+                            <constraint firstItem="HM8-XS-0Q0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PmB-7x-z0o"/>
+                            <constraint firstItem="e4c-eX-IBU" firstAttribute="top" secondItem="HM8-XS-0Q0" secondAttribute="bottom" constant="20" id="QI8-NU-mdw"/>
+                            <constraint firstAttribute="trailing" secondItem="HM8-XS-0Q0" secondAttribute="trailing" id="Xr7-Yt-pi2"/>
+                            <constraint firstItem="e4c-eX-IBU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="omc-dm-CfW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e4c-eX-IBU" secondAttribute="bottom" constant="20" id="sls-dy-HIs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="e4c-eX-IBU" id="e68-pc-s7e"/>
+                        <outlet property="headerView" destination="HM8-XS-0Q0" id="rSg-dc-aib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Taco-POP" width="490" height="100"/>
+    </resources>
 </document>

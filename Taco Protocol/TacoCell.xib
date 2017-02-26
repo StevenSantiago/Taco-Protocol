@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TacoCell" id="gTV-IL-0wX" customClass="TacoCell" customModule="Taco_Protocol" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="292" height="238"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="292" height="238"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Beef" translatesAutoresizingMaskIntoConstraints="NO" id="Mqm-B6-O61">
+                        <rect key="frame" x="0.0" y="0.0" width="292" height="207"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beef Taco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="oU0-Bm-R2s">
+                        <rect key="frame" x="0.0" y="212" width="292" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Mqm-B6-O61" secondAttribute="trailing" id="0QL-TV-ZCU"/>
+                <constraint firstItem="Mqm-B6-O61" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2ch-uA-RaJ"/>
+                <constraint firstItem="oU0-Bm-R2s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dpo-sb-moC"/>
+                <constraint firstItem="oU0-Bm-R2s" firstAttribute="top" secondItem="Mqm-B6-O61" secondAttribute="bottom" constant="5" id="crr-VW-IM9"/>
+                <constraint firstItem="Mqm-B6-O61" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nLP-Qs-zGE"/>
+                <constraint firstAttribute="trailing" secondItem="oU0-Bm-R2s" secondAttribute="trailing" id="p9c-w1-2q1"/>
+                <constraint firstAttribute="bottom" secondItem="oU0-Bm-R2s" secondAttribute="bottom" constant="5" id="v4B-pH-VBZ"/>
+            </constraints>
+            <size key="customSize" width="292" height="238"/>
+            <connections>
+                <outlet property="tacoImage" destination="Mqm-B6-O61" id="OQS-fM-P2L"/>
+                <outlet property="tacoLabel" destination="oU0-Bm-R2s" id="uQu-QL-8Wn"/>
+            </connections>
+            <point key="canvasLocation" x="146" y="146"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Beef" width="960" height="640"/>
+    </resources>
+</document>
